@@ -12,14 +12,3 @@ program supports command line arguments for exectuion: Following argument suppor
           assuming branchtest_bin.txt is the input file at the moment.
 
 
-**currently known issues
-
--only handles R-type instructions
-
--does not handle hazards
-
--cycles data quicker than sample output
-
--cache data output is currently 1 cycle behind other output
-
--issues with MEM unit, not currently fuctional.
