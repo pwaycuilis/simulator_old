@@ -8,12 +8,13 @@ loads and executes binary ARM file. Produces disassembled program code and produ
 
 program supports command line arguments for exectuion: Following argument supported:
 
-  $python team23_project3.py -i branchtest_bin.txt -o team23_out
-  NOTE: can change output file name using -o argument
-          assuming branchtest_bin.txt is the input file at the moment.
+  $python team23_project3.py -i branchtest_bin.txt -o team23_out\
+  NOTE: can change input or output file name using -i or -o argument respectively
+ 
 
-Below is a sample run of the program showing the contents of the text input file branchtest_bin.txt 
-  as well as the 2 produced output files team23_out_dis.txt and team23_out_pipeline.txt
+
+# Below is a sample run of the program 
+(showing the contents of the text input file branchtest_bin.txt as well as the 2 produced output files team23_out_dis.txt and team23_out_pipeline.txt)
   
 
 branchtest_bin.txt (input ARM machine code):
