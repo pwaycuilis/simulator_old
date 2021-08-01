@@ -81,7 +81,8 @@ Set 3: LRU = 0\
 data:
 
 ---------------------
-cycle:2\
+cycle:2
+
 Pre-Issue Buffer:\
 	Entry 0:	ADD	R3, R5, R4\
 	Entry 1:	SUB	R4, R12, R7\
@@ -102,8 +103,10 @@ r00:	0	0	0	0	0	0	0	0\
 r08: 	0	0	0	0	0	0	0	0\
 r16: 	0	0	0	0	0	0	0	0\
 r24: 	0	0	0	0	0	0	0	0\
-Cache\
-Set 0: LRU = 1\
+
+Cache
+
+Set 0: LRU = 1	\
 	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
 	Entry 1:[0, 0, 0, 0, 0]\
 Set 1: LRU = 0\
@@ -115,9 +118,10 @@ Set 2: LRU = 0\
 Set 3: LRU = 0\
 	Entry 0:[0, 0, 0, 0, 0]\
 	Entry 1:[0, 0, 0, 0, 0]\
-data:\
+data:
 ---------------------
-cycle:3	\
+cycle:3	
+
 Pre-Issue Buffer:\
 	Entry 0:	AND	R5, R1, R2\
 	Entry 1:	SUB	R4, R12, R7\
@@ -189,218 +193,224 @@ Set 3: LRU = 0\
 	Entry 1:[0, 0, 0, 0, 0]\
 data:\
 ---------------------
-cycle:5	
-Pre-Issue Buffer:
-	Entry 0:	EOR	R7, R1, R2
-	Entry 1:	ORR	R6, R2, R2
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	SUB	R4, R12, R7
-	Entry 1:	AND	R5, R1, R2
-Post_ALU Queue:
-	Entry 0:	ADD	R3, R5, R4
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	0	0	0
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 0
-	Entry 0:[0, 0, 0, 0, 0]
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 0
-	Entry 0:[0, 0, 0, 0, 0]
-	Entry 1:[0, 0, 0, 0, 0]
+cycle:5	\
+Pre-Issue Buffer:\
+	Entry 0:	EOR	R7, R1, R2\
+	Entry 1:	ORR	R6, R2, R2\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	SUB	R4, R12, R7\
+	Entry 1:	AND	R5, R1, R2\
+Post_ALU Queue:\
+	Entry 0:	ADD	R3, R5, R4\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	0	0	0\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 0\
+	Entry 0:[0, 0, 0, 0, 0]\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 0\
+	Entry 0:[0, 0, 0, 0, 0]\
+	Entry 1:[0, 0, 0, 0, 0]\
+data:\
+---------------------
+cycle:6	\
+Pre-Issue Buffer:\
+	Entry 0:	EOR	R7, R1, R2\
+	Entry 1:	\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	AND	R5, R1, R2\
+	Entry 1:	ORR	R6, R2, R2\
+Post_ALU Queue:\
+	Entry 0:	SUB	R4, R12, R7\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	0	0	0\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 1\
+	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 0\
+	Entry 0:[0, 0, 0, 0, 0]\
+	Entry 1:[0, 0, 0, 0, 0]\
+data:\
+---------------------
+cycle:7	\
+Pre-Issue Buffer:\
+	Entry 0:	\
+	Entry 1:	\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	ORR	R6, R2, R2\
+	Entry 1:	EOR	R7, R1, R2\
+Post_ALU Queue:\
+	Entry 0:	AND	R5, R1, R2\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	0	0	0\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 1\
+	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 0\
+	Entry 0:[0, 0, 0, 0, 0]\
+	Entry 1:[0, 0, 0, 0, 0]\
 data:
 ---------------------
-cycle:6	
-Pre-Issue Buffer:
-	Entry 0:	EOR	R7, R1, R2
-	Entry 1:	
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	AND	R5, R1, R2
-	Entry 1:	ORR	R6, R2, R2
-Post_ALU Queue:
-	Entry 0:	SUB	R4, R12, R7
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	0	0	0
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 1
-	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 0
-	Entry 0:[0, 0, 0, 0, 0]
-	Entry 1:[0, 0, 0, 0, 0]
-data:
----------------------
-cycle:7	
-Pre-Issue Buffer:
-	Entry 0:	
-	Entry 1:	
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	ORR	R6, R2, R2
-	Entry 1:	EOR	R7, R1, R2
-Post_ALU Queue:
-	Entry 0:	AND	R5, R1, R2
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	0	0	0
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 1
-	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 0
-	Entry 0:[0, 0, 0, 0, 0]
-	Entry 1:[0, 0, 0, 0, 0]
-data:
----------------------
-cycle:8	
-Pre-Issue Buffer:
-	Entry 0:	
-	Entry 1:	
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	EOR	R7, R1, R2
-	Entry 1:	
-Post_ALU Queue:
-	Entry 0:	ORR	R6, R2, R2
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	4	0	0
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 1
-	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 1
-	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']
-	Entry 1:[0, 0, 0, 0, 0]
-data:
----------------------
+
+cycle:8	\
+
+Pre-Issue Buffer:\
+	Entry 0:	\
+	Entry 1:	\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	EOR	R7, R1, R2\
+	Entry 1:	\
+Post_ALU Queue:\
+	Entry 0:	ORR	R6, R2, R2\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	4	0	0\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 1\
+	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 1\
+	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']\
+	Entry 1:[0, 0, 0, 0, 0]\
+data:\
+---------------------\
+
 cycle:9	
-Pre-Issue Buffer:
-	Entry 0:	
-	Entry 1:	
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	
-	Entry 1:	
-Post_ALU Queue:
-	Entry 0:	EOR	R7, R1, R2
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	4	5	0
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 1
-	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 1
-	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']
-	Entry 1:[0, 0, 0, 0, 0]
-data:
+
+Pre-Issue Buffer:\
+	Entry 0:	\
+	Entry 1:	\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_ALU Queue:\
+	Entry 0:	EOR	R7, R1, R2\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	4	5	0\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 1\
+	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 1\
+	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']\
+	Entry 1:[0, 0, 0, 0, 0]\
+data:\
 ---------------------
+
 cycle:10	
-Pre-Issue Buffer:
-	Entry 0:	
-	Entry 1:	
-	Entry 2:	
-	Entry 3:	
-Pre_ALU Queue:
-	Entry 0:	
-	Entry 1:	
-Post_ALU Queue:
-	Entry 0:	
-Pre_MEM Queue:
-	Entry 0:	
-	Entry 1:	
-Post_MEM Queue:
-	Entry 0:	
-registers:
-r00:	0	4	5	0	0	4	5	1
-r08: 	0	0	0	0	0	0	0	0
-r16: 	0	0	0	0	0	0	0	0
-r24: 	0	0	0	0	0	0	0	0
-Cache
-Set 0: LRU = 1
-	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 1: LRU = 1
-	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 2: LRU = 1
-	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']
-	Entry 1:[0, 0, 0, 0, 0]
-Set 3: LRU = 1
-	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']
-	Entry 1:[0, 0, 0, 0, 0]
+
+Pre-Issue Buffer:\
+	Entry 0:	\
+	Entry 1:	\
+	Entry 2:	\
+	Entry 3:	\
+Pre_ALU Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_ALU Queue:\
+	Entry 0:	\
+Pre_MEM Queue:\
+	Entry 0:	\
+	Entry 1:	\
+Post_MEM Queue:\
+	Entry 0:	\
+registers:\
+r00:	0	4	5	0	0	4	5	1\
+r08: 	0	0	0	0	0	0	0	0\
+r16: 	0	0	0	0	0	0	0	0\
+r24: 	0	0	0	0	0	0	0	0\
+Cache\
+Set 0: LRU = 1\
+	Entry 0:[1, 0, 3, '10010001000000000001000000100001', '10010001000000000001010001000010']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 1: LRU = 1\
+	Entry 0:[1, 0, 3, '10001011000001000000000010100011', '11001011000001110000000110000100']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 2: LRU = 1\
+	Entry 0:[1, 0, 3, '10001010000000100000000000100101', '10101010000000100000000001000110']\
+	Entry 1:[0, 0, 0, 0, 0]\
+Set 3: LRU = 1\
+	Entry 0:[1, 0, 3, '11101010000000100000000000100111', '11111110110111101111111111100111']\
+	Entry 1:[0, 0, 0, 0, 0]\
 data:
