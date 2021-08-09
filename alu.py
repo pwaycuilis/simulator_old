@@ -1,5 +1,9 @@
-import writeBack
-import simClass
+
+
+#The ALU handles all non-memory instructions (everything except LDUR and STUR and branch instructions that are handled in the IF stage). 
+#All ALU operations take one clock cycle.
+#When the ALU finishes, the instruction is moved from the pre-ALU buffer to the post-ALU buffe. The ALU can only fetch one istruction from the pre-ALU buffer per clock cycle.
+
 class ALU:
 
     def __init__(self, R, postALUBuff, preALUBuff, opcodeStr, arg1, arg2, arg3):
@@ -18,14 +22,14 @@ class ALU:
 
     def run(self):
 
-        #self.preALUBuff = [0, 1]
-
-        #sim = simClass.simClass()
         i = self.preALUBuff[0]
 
 
         # armState.R[self.arg3[i]] = armState.R[self.arg1[i]] + armState.R[self.arg2[i]]
 
+
+        ##############
+        #self.preALUBuff[0] and self.postALUBuff[1] both incrementing by 1 each cycle
         self.postALUBuff = [-1, -1]
 
         if self.opcodeStr[i] == "ADD":
@@ -45,6 +49,9 @@ class ALU:
         elif self.opcodeStr[i] == "SUB":
             self.postALUBuff = [self.R[self.arg1[i]] - self.R[self.arg2[i]], i]
 
+            # SUBI
+            #elif (1672 <= self.opcode[i] <= 1673):
+            #armState.R[self.arg1[i]] = armState.R[self.arg2[i]] - self.arg3[i]
 
         elif self.opcodeStr[i] == "SUBI":
             self.postALUBuff = [self.R[self.arg2[i]] - self.arg3[i], i]
@@ -60,39 +67,18 @@ class ALU:
         elif self.opcodeStr[i] == "EOR":
             self.postALUBuff = [self.R[self.arg1[i]] ^ self.R[self.arg2[i]], i]
 
-
-            # elif self.opcode[i] == 1360:
-            #     armState.R[self.arg3[i]] = armState.R[self.arg1[i]] | armState.R[self.arg2[i]]
-
-            # EOR
-            # elif self.opcode[i] == 1872:
-            #     armState.R[self.arg3[i]] = armState.R[self.arg1[i]] ^ armState.R[self.arg2[i]]
+        elif self.opcodeStr[i] == "LSL":
+            self.postALUBuff = [self.R[self.arg2[i]] << self.arg1[i], i]
 
 
 
-        #rmState.R[self.arg3[i]] = armState.R[self.arg1[i]] & armState.R[self.arg2[i]]
-
-
+        #move instruction in entry 1 to entry 0 and then clear entry 1
+        #just do if not stalled
         self.preALUBuff[0] = self.preALUBuff[1]
         self.preALUBuff[1] = -1
 
 
 
-            #armState.R[self.arg1[i]] = armState.R[self.arg2[i]] + self.arg3[i]
-
-
-        # return ALU(self.R, self.postALUBuff, self.preALUBuff,self.opcodeStr,
-        #             self.arg1, self.arg2, self.arg3)
-
+          
         return [self.preALUBuff, self.postALUBuff]
 
-        # (self, R, postALUBuff, preALUBuff, opcodeStr, arg1, arg2, arg3):
-
-        # return ALU(self.R, self.postALUBuff, self.preALUBuff, self.opcodeStr, self.arg1,
-        #            self.arg2, self.arg3)
-
-
-
-
-    # def updateBuffer(self):
-    #     return [self.preALUBuff, self.postALUBuff]
