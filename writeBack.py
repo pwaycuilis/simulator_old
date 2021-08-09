@@ -1,5 +1,6 @@
 
 import simClass
+#The WB unit can execute two write-backs in one cyucle. It fetches the contents of the post-ALU and post-MEM buffers and updates the register file.
 
 class WriteBack:
 
@@ -13,34 +14,20 @@ class WriteBack:
 
     def run(self):
 
-
+ 
         if self.postMemBuff != [-1, -1]:
             self.R[self.destReg[self.postMemBuff[1]]] = self.postMemBuff[0]  #self.R[self.destReg[
             self.postMemBuff = [-1, -1]
+
+        #if postALUBuff not empty, write value to register and then clear buff
 
         if self.postALUBuff != [-1, -1]:
             self.R[self.destReg[self.postALUBuff[1]]] = self.postALUBuff[0]
             self.postALUBuff = [-1, -1]
 
-        # if self.postMemBuff[1] != -1:
-        #     self.R[self.destReg[self.postMemBuff[1]]] = self.postMemBuff[0]
-        #
-        #     self.postMemBuff[0] = -1
-        #     self.postMemBuff[1] = -1
-        #
-        # if self.postALUBuff[1] != -1:
-        #     self.R[self.destReg[self.postALUBuff[1]]] = self.postALUBuff[0]
-        #
-        #     self.postALUBuff[0] = -1
-        #     self.postALUBuff[1] = -1
 
-        # print("in Writeback: R, postMemBuff, postALUBuff, destReg")
-        # print(self.R)
-        # print(self.postMemBuff)
-        # print(self.postALUBuff)
-        # print(self.destReg)
-
-        return WriteBack(self.R, self.postMemBuff, self.postALUBuff, self.destReg)
+        #**********************************^^^^^^
+        return [self.R, self.postMemBuff, self.postALUBuff, self.destReg]
         #return [self.R, self.postMemBuff, self.postALUBuff]
 
     # def updateBuffer(self):
