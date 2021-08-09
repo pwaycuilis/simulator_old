@@ -1,7 +1,8 @@
 import sys
 from helpers import SetUp
 import masking_constants as MASKs
-
+#simulator.py is file used for previous iteration of project(instruction-by-instruction simulator) that calculates ands updates registers and data memory.
+#In this cycle-by-cycle simulator version, the tasks performed by this unit are split amongst IF, issue, ALU, MEM, and WB units and performed in pipeline
 
 class State():
     dataval = []
@@ -144,19 +145,8 @@ class Simulator():
             # TODO test and delete the need for instructions
             # if self.instructions[i] == '0000000000000000000000000000000':
             # NOP   this might still be wrong need to test more
-            # print(self.opcode)
-            # print(self.arg1)
-            # print(self.arg2)
-            # print(self.arg3)
-            # print(i)
-            # print(armState.R)
-            # print(self.address)
-
-            # print(self.dataval)
-
-            # print(self.address[-1])
-
-            # print(-9 >> 2)
+     
+ 
             if (self.opcode[i] == 0):  # NOP
                 armState.printState()
                 armState.incrementPC()
@@ -249,25 +239,7 @@ class Simulator():
                     # print(">= 0")
                     armState.R[self.arg3[i]] = armState.R[self.arg2[i]] >> self.arg1[i]
                 else:
-                    # #print("else (<0) ")
-                    # msb = 1
-                    # #exp = 0
-                    # #2s comp neg number padded with 0 instead = pos num + the amount of from most sig bit
-                    # #example: -112 = -128 + 16  , padded with zeros the number would be 128 + 16 = 144
-                    # #so after finding the -128 ,  convert it to 144 then bitshift to right
-                    #
-                    # while (-msb > armState.R[self.arg2[i]]):
-                    #     msb = msb * 2   #find value of most significant bit
-                    #     #exp += 1    #find most significant bit
-                    #     #print(exp)
-                    #     #print(msb)
-                    #
-                    # newNum = msb - (armState.R[self.arg2[i]] * (-1))
-                    # #print(newNum)
-                    # #armState.R[self.arg3[i]] = msb + newNum
-                    # msb += newNum
-                    # armState.R[self.arg3[i]] = msb >> self.arg1[i]
-
+     
                     armState.R[self.arg3[i]] = (armState.R[self.arg2[i]] % (1 << 32) >> self.arg1[i])
 
                     # armState.R[self.arg3[i]] = (armState.R[self.arg2[i]] + 0x80000000) >> self.arg1[i]
@@ -306,30 +278,6 @@ class Simulator():
                     for n in range(len(self.address)):
                         if armState.R[self.arg2[i]] + (self.arg3[i] * 4) == self.address[n]:
                             self.dataval[n - self.numInstructs] = armState.R[self.arg1[i]]
-
-                # if (armState.R[self.arg2[i]] + (self.arg3[i]) * 4) > self.address[-1]:
-                #     storeIndex = armState.getIndexOfMemAddress(armState.R[self.arg2[i]] + (self.arg3[i]*4))
-                #     lastIndex = armState.getIndexOfMemAddress(self.address[-1])
-                #     print(armState.R[self.arg2[i]] + (self.arg3[i]*4))
-                #     print(self.address[-1])
-                #     print(storeIndex)
-                #     print(lastIndex)
-                #     print(storeIndex - lastIndex)
-                #     for z in range(storeIndex-lastIndex):
-                #         self.address.append(self.address[-1] + 4 )
-                #         self.dataval.append(0)
-                #
-                #     self.dataval.append(armState.R[self.arg1[i]])
-
-
-
-
-
-
-
-
-
-
 
             # LDUR R1, [R2, #100]
 
