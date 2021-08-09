@@ -3,7 +3,7 @@ import os
 import masking_constants as MASKs
 import sys
 
-###uncommented instructions
+
 
 class Disassembler:
     opcodeStr = []
@@ -86,9 +86,9 @@ class Disassembler:
                 self.arg2Str.append(", R" + str(self.arg1[i]))
                 self.arg3Str.append(", R" + str(self.arg2[i]))
 
-                self.destReg.append(self.arg3[i])
-                self.src1Reg.append(self.arg1[i])
-                self.src2Reg.append(self.arg2[i])
+                self.destReg.append(self.arg3[i])   #rd (SUB Rd = Rn - Rm)
+                self.src1Reg.append(self.arg1[i])   #rn
+                self.src2Reg.append(self.arg2[i])   #rm
 
                 # AND
             elif opcode[i] == 1104:
@@ -341,6 +341,10 @@ class Disassembler:
                 self.arg2Str.append(", R" + str(self.arg2[i]))
                 self.arg3Str.append(", #" + str(self.arg1[i]))
 
+                #NEWLY ADDED
+                self.destReg.append(self.arg3[i])
+                self.src1Reg.append(self.arg2[i])
+
                 # LSL R0, R1, #4  Type R
             elif opcode[i] == 1691:
 
@@ -354,6 +358,14 @@ class Disassembler:
                 self.arg1Str.append("\tR" + str(self.arg3[i]))
                 self.arg2Str.append(", R" + str(self.arg2[i]))
                 self.arg3Str.append(", #" + str(self.arg1[i]))
+
+                ##NEWLY ADDED
+                self.destReg.append(self.arg3[i])
+                self.src1Reg.append(self.arg2[i])
+                self.src2Reg.append(-19)
+                #self.destReg.append(self.arg1[i])
+                #self.src1Reg.append(self.arg2[i])
+                #self.src2Reg.append(-11)
 
                 # ASR R0, R1, #4  Type R
             elif opcode[i] == 1692:
@@ -443,9 +455,6 @@ class Disassembler:
                 sys.exit("You have found an unknown instruction, investigate NOW")
 
         for i in range(self.numInstructs, len(instructions)):
-            # self.address.append(96 + (self.numInstructs * 4) + (i * 4))
-            # print("appending address:")
-            # print(self.address[-1])
             self.rawdata.append(instructions[i])
             self.dataval.append(SetUp.imm_32_bit_unsigned_to_32_bit_signed_converter(int(instructions[i], base=2)))
 
